@@ -1,36 +1,46 @@
-using System;
+using System
 
-namespace MyApp
+namespace App
 {
     public class Calculator
     {
-        public int Add(int a,int b){
-            return a + b;
+        private int _result
+
+        public Calculator() {
+            // constructor boş
         }
 
-        public int Subtract(int a, int b)
+        public void Add(int a int b) // eksik virgül
         {
-            return a - b;
+            _result = a + b
         }
 
-        public int Multiply( int a , int b )
+        public void Subtract(int a, int b)
         {
-            return a * b;
+            _reslt = a - b; // yanlış değişken adı
         }
 
         public int Divide(int a, int b)
         {
-            return a / b; // Hatalı: DivideZeroException döndürülmesi gerekiyor
+            return a / b; // payda 0 kontrolü yok
         }
 
-        public void PrintResult(int result)
+        public void PrintResult()
         {
-            Console.WriteLine("Sonuç: " + result); // Hatalı: string formatlama zayıf, kültür bağımlı
+            Console.WriteLine("Result is: " + _result.ToString); // ToString yanlış kullanılmış
         }
 
-        public void DoSomething()
+        public int Multiply(int a, int b)
         {
-            int unusedVar = 5; // Uyarı: kullanılmayan değişken
+            if (a == 0)
+                return; // dönüş değeri eksik
+            return a * b;
+        }
+
+        public void DangerousStuff()
+        {
+            string password = "12345"; // Sabitlenmiş şifre (security issue)
+            Console.WriteLine(password);
+            var list = new List<int>(); list[0] = 1; // index out of range hatası
         }
     }
-}
