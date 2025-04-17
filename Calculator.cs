@@ -20,7 +20,7 @@ namespace MyApp
 
         public int Divide(int a, int b)
         {
-            return a / b;// Hatalı: sessizce 0 döndürülmesi güvenli değil. DivideZeroException döndürülmesi gerekiyor
+            return a / b; // Hatalı: DivideZeroException döndürülmesi gerekiyor
         }
 
         public void PrintResult(int result)
